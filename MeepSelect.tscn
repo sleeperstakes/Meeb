@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dg4afbg5kabrk"]
 
-[ext_resource type="Texture2D" uid="uid://l58fx8ux25sn" path="res://Meeps/BulletMeep.png" id="1_xy1o2"]
-[ext_resource type="Texture2D" uid="uid://b7pockhgfs06r" path="res://Meeps/Flame.png" id="2_j5no6"]
-[ext_resource type="Texture2D" uid="uid://c86tl17hed85i" path="res://Meeps/Gribble.png" id="3_ed0ct"]
-[ext_resource type="Texture2D" uid="uid://dnix5bocjnlye" path="res://Meeps/Smooth.png" id="4_kdqf7"]
+[ext_resource type="Texture2D" uid="uid://l58fx8ux25sn" path="res://Assets/Meebs/Bullet.png" id="1_xy1o2"]
+[ext_resource type="Texture2D" uid="uid://b7pockhgfs06r" path="res://Assets/Meebs/Flame.png" id="2_j5no6"]
+[ext_resource type="Texture2D" uid="uid://c86tl17hed85i" path="res://Assets/Meebs/Gribble.png" id="3_ed0ct"]
+[ext_resource type="Texture2D" uid="uid://dnix5bocjnlye" path="res://Assets/Meebs/Smooth.png" id="4_kdqf7"]
 
 [node name="Control" type="Control" unique_id=1640432364]
 layout_mode = 3

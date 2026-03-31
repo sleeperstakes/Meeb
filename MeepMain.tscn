@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://u76w21iaxgrr"]
 
-[ext_resource type="PackedScene" uid="uid://cletuhaoaqaia" path="res://rocks.blend" id="1_ji4e8"]
+[ext_resource type="PackedScene" uid="uid://cletuhaoaqaia" path="res://Assets/Terrain/rocks.blend" id="1_ji4e8"]
 [ext_resource type="PackedScene" uid="uid://dg4afbg5kabrk" path="res://MeepSelect.tscn" id="2_4tx6b"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_4tx6b"]
@@ -14,8 +14,8 @@ transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.965
 [node name="Camera3D" type="Camera3D" parent="Marker3D" unique_id=725046382]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.9612904)
 
-[node name="rocks" parent="." unique_id=1502419391 instance=ExtResource("1_ji4e8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23725176, 0.5340991, 0)
+[node name="rocks" parent="." unique_id=1070657038 instance=ExtResource("1_ji4e8")]
+transform = Transform3D(3.135, 0, 0, 0, 3.135, 0, 0, 0, 3.135, 0.23725176, 0.5340991, -25.08)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=577431976]
 mesh = SubResource("BoxMesh_4tx6b")

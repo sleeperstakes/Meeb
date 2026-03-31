@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://de37e8xf1ceal"]
+
+[ext_resource type="Script" uid="uid://bkxsnkgvfmtwc" path="res://meeb.gd" id="1_m1mtj"]
+[ext_resource type="Texture2D" uid="uid://dnix5bocjnlye" path="res://Assets/Meebs/Smooth.png" id="2_w8yts"]
+
+[node name="Meeb" type="Node3D" unique_id=2124475014]
+script = ExtResource("1_m1mtj")
+texture = ExtResource("2_w8yts")
+kind = 1
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1143607179]
+unique_name_in_owner = true
+billboard = 2
+shaded = true
+texture = ExtResource("2_w8yts")
+
+[node name="Meep" type="AudioStreamPlayer3D" parent="." unique_id=1430288842]
+
+[node name="MeepAttack" type="AudioStreamPlayer3D" parent="." unique_id=1761634500]
+
+[node name="MeepThrown" type="AudioStreamPlayer3D" parent="." unique_id=728386182]

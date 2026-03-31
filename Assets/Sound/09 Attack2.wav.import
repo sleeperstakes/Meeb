@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://blk73y5m2epyw"
+path="res://.godot/imported/09 Attack2.wav-909c8521c1877d51bf6654c4fb352cec.sample"
+
+[deps]
+
+source_file="res://Assets/Sound/09 Attack2.wav"
+dest_files=["res://.godot/imported/09 Attack2.wav-909c8521c1877d51bf6654c4fb352cec.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
