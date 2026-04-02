@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://18gadmnrx4kw"]
+
+[ext_resource type="Texture2D" uid="uid://dnix5bocjnlye" path="res://Assets/Meebs/Smooth.png" id="2_w8yts"]
+
+[sub_resource type="GDScript" id="GDScript_xt3q3"]
+script/source = "@tool
+extends Node3D
+
+var textureGribble = preload(\"res://Assets/Meebs/Gribble.png\")
+var textureSmooth = preload(\"res://Assets/Meebs/Smooth.png\")
+var textureFlame = preload(\"res://Assets/Meebs/Flame.png\")
+var textureBullet = preload(\"res://Assets/Meebs/Bullet.png\")
+
+enum MeebKind {
+  Gribble,
+  Smooth,
+  Flame,
+  Bullet
+}
+
+@export var texture : Texture2D: 
+  set(t):
+    texture = t
+    if is_node_ready():
+      %Sprite3D.texture = texture
+
+@export var kind:MeebKind:
+  set(k):
+    kind = k
+    if is_node_ready():
+      match kind:
+        MeebKind.Gribble: 
+          texture = textureGribble
+        MeebKind.Smooth: 
+          texture = textureSmooth
+        MeebKind.Flame: 
+          texture = textureFlame
+        MeebKind.Bullet: 
+          texture = textureBullet
+"
+
+[node name="Meeb" type="Node3D" unique_id=2124475014]
+script = SubResource("GDScript_xt3q3")
+texture = ExtResource("2_w8yts")
+kind = 1
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=1143607179]
+unique_name_in_owner = true
+billboard = 2
+shaded = true
+texture = ExtResource("2_w8yts")
+
+[node name="Meep" type="AudioStreamPlayer3D" parent="." unique_id=1430288842]
+
+[node name="MeepAttack" type="AudioStreamPlayer3D" parent="." unique_id=1761634500]
+
+[node name="MeepThrown" type="AudioStreamPlayer3D" parent="." unique_id=728386182]

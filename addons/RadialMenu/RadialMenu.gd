@@ -43,7 +43,8 @@ const ITEM_ICONS_NAME = "ItemIcons"
 const MOUSE_RELEASE_TIMEOUT = 400
 
 enum Position { off, inside, outside }
-
+## whether the radial menu is activ
+@export var active := false
 ## Defines the radius of the ring
 @export var radius := 150: set = _set_radius
 ## Defines the menu ring width
@@ -205,7 +206,7 @@ func _radial_input(event):
     get_viewport().set_input_as_handled()
     return
       
-  if event is InputEventMouseMotion:
+  if event is InputEventMouseMotion and active:
     set_selected_item(get_selected_by_mouse())
   elif event is InputEventJoypadMotion:
     set_selected_item(get_selected_by_joypad())
@@ -214,13 +215,6 @@ func _radial_input(event):
   if has_open_submenu():
     return
   
-  if event is InputEventMouseButton:
-    _handle_mouse_buttons(event)
-  else:
-    _handle_actions(event)
-
-
-
 
 func is_wheel_button(event):
   return event.button_index in [MOUSE_BUTTON_WHEEL_UP, MOUSE_BUTTON_WHEEL_DOWN, MOUSE_BUTTON_WHEEL_LEFT, MOUSE_BUTTON_WHEEL_RIGHT]

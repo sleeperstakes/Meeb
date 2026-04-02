@@ -1,4 +1,4 @@
-class_name Meeb extends Node
+class_name Meeb extends Node3D
 
 
 

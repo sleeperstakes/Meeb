@@ -1,8 +1,19 @@
 [gd_scene format=3 uid="uid://dbqgq1j0q8rdh"]
 
 [ext_resource type="Script" uid="uid://cadrknr71du06" path="res://PC/pc.gd" id="1_cv6ni"]
+[ext_resource type="Shader" uid="uid://1ossek5vby7l" path="res://PC/pc.gdshader" id="2_5vmlt"]
 [ext_resource type="Texture2D" uid="uid://chfcccdu2tlwt" path="res://Assets/GIFs/cursor_ammo.png" id="2_rki5i"]
 [ext_resource type="Texture2D" uid="uid://bnmwmleg6tquo" path="res://Assets/GIFs/cursor_throw.png" id="3_5vmlt"]
+[ext_resource type="PackedScene" uid="uid://dg4afbg5kabrk" path="res://UI/MeebSelect.tscn" id="4_rki5i"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lxqcr"]
+render_priority = 0
+shader = ExtResource("2_5vmlt")
+shader_parameter/depth_treshold = 0.05
+
+[sub_resource type="QuadMesh" id="QuadMesh_prw34"]
+flip_faces = true
+size = Vector2(2, 2)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lxqcr"]
 atlas = ExtResource("2_rki5i")
@@ -62,17 +73,30 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="PC" type="Marker3D" unique_id=1492767841]
-transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 0, 0)
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_cv6ni"]
+
+[node name="PC" type="CharacterBody3D" unique_id=2081905735]
+transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 script = ExtResource("1_cv6ni")
 
-[node name="Camera3D" type="Camera3D" parent="." unique_id=1960940373]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.9612904)
+[node name="CamHandler" type="Marker3D" parent="." unique_id=1798505897]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.96592575, 0.258819, 0, -0.258819, 0.96592575, 0, 0.99999994, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CamHandler" unique_id=1960940373]
+transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 2.9612904)
+current = true
+
+[node name="PostProcess" type="MeshInstance3D" parent="CamHandler" unique_id=1653356559]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+material_override = SubResource("ShaderMaterial_lxqcr")
+mesh = SubResource("QuadMesh_prw34")
 
 [node name="Cursors" type="Node2D" parent="." unique_id=898744752]
 
 [node name="CursorAmmo" type="AnimatedSprite2D" parent="Cursors" unique_id=1415100018]
 unique_name_in_owner = true
+visible = false
 sprite_frames = SubResource("SpriteFrames_fe6os")
 animation = &"new_animation"
 frame_progress = 0.14363895
@@ -81,3 +105,13 @@ frame_progress = 0.14363895
 unique_name_in_owner = true
 sprite_frames = SubResource("SpriteFrames_oabit")
 animation = &"new_animation"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=738425239]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+shape = SubResource("CylinderShape3D_cv6ni")
+
+[node name="MeebSelector" parent="." unique_id=1640432364 instance=ExtResource("4_rki5i")]
+offset_left = 799.0
+offset_top = 257.0
+offset_right = 799.0
+offset_bottom = 257.0

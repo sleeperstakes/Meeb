@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://u76w21iaxgrr"]
+
+[ext_resource type="PackedScene" uid="uid://dbqgq1j0q8rdh" path="res://PC/pc.tscn" id="1_uxrcv"]
+[ext_resource type="PackedScene" uid="uid://cletuhaoaqaia" path="res://Assets/Terrain/rocks.blend" id="2_rf2cd"]
+[ext_resource type="Shader" uid="uid://ck4ym657xdhn5" path="res://animatedscribble.gdshader" id="3_uxrcv"]
+[ext_resource type="PackedScene" uid="uid://f0s1p8ex7d5o" path="res://HidingPlaces/Meeb.blend" id="4_5crlr"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rf2cd"]
+render_priority = 0
+shader = ExtResource("3_uxrcv")
+shader_parameter/size = 15.045
+shader_parameter/intensity = 0.02
+shader_parameter/frame_time = 0.17
+
+[sub_resource type="BoxMesh" id="BoxMesh_4tx6b"]
+size = Vector3(100, 0.5, 100)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yrcb4"]
+data = PackedVector3Array(-50, 0.25, 50, 50, 0.25, 50, -50, -0.25, 50, 50, 0.25, 50, 50, -0.25, 50, -50, -0.25, 50, 50, 0.25, -50, -50, 0.25, -50, 50, -0.25, -50, -50, 0.25, -50, -50, -0.25, -50, 50, -0.25, -50, 50, 0.25, 50, 50, 0.25, -50, 50, -0.25, 50, 50, 0.25, -50, 50, -0.25, -50, 50, -0.25, 50, -50, 0.25, -50, -50, 0.25, 50, -50, -0.25, -50, -50, 0.25, 50, -50, -0.25, 50, -50, -0.25, -50, 50, 0.25, 50, -50, 0.25, 50, 50, 0.25, -50, -50, 0.25, 50, -50, 0.25, -50, 50, 0.25, -50, -50, -0.25, 50, 50, -0.25, 50, -50, -0.25, -50, 50, -0.25, 50, 50, -0.25, -50, -50, -0.25, -50)
+
+[node name="Node3D" type="Node3D" unique_id=195447285]
+
+[node name="Marker3D" parent="." unique_id=1492767841 instance=ExtResource("1_uxrcv")]
+transform = Transform3D(1, 0, 0, 0, 0.96592575, 0.258819, 0, -0.258819, 0.96592575, 0, 0, 0)
+
+[node name="rocks" parent="." unique_id=1070657038 instance=ExtResource("2_rf2cd")]
+transform = Transform3D(3.135, 0, 0, 0, 3.135, 0, 0, 0, 3.135, 0.23725176, 0.5340991, -25.08)
+
+[node name="Cube" parent="rocks" index="0" unique_id=1348069212]
+material_override = SubResource("ShaderMaterial_rf2cd")
+
+[node name="Cube_001" parent="rocks" index="1" unique_id=847025832]
+material_override = SubResource("ShaderMaterial_rf2cd")
+
+[node name="Cube_002" parent="rocks" index="2" unique_id=1589283055]
+material_override = SubResource("ShaderMaterial_rf2cd")
+
+[node name="Cube_003" parent="rocks" index="3" unique_id=1777314685]
+material_override = SubResource("ShaderMaterial_rf2cd")
+
+[node name="Cube_004" parent="rocks" index="4" unique_id=564019587]
+material_override = SubResource("ShaderMaterial_rf2cd")
+
+[node name="Cube_005" parent="rocks" index="5" unique_id=1456702107]
+material_override = SubResource("ShaderMaterial_rf2cd")
+
+[node name="Cube_006" parent="rocks" index="6" unique_id=779456875]
+material_override = SubResource("ShaderMaterial_rf2cd")
+
+[node name="Cube_007" parent="rocks" index="7" unique_id=1196590796]
+material_override = SubResource("ShaderMaterial_rf2cd")
+
+[node name="Cube_008" parent="rocks" index="8" unique_id=1726400765]
+material_override = SubResource("ShaderMaterial_rf2cd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=577431976]
+mesh = SubResource("BoxMesh_4tx6b")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1171531472]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=83891178]
+shape = SubResource("ConcavePolygonShape3D_yrcb4")
+
+[node name="Sprite3D" type="Sprite3D" parent="." unique_id=299700077]
+
+[node name="Meeb" parent="." unique_id=750449904 instance=ExtResource("4_5crlr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.256525, 0, 13.585329)
+
+[node name="Box" parent="Meeb" index="2" unique_id=1758642990]
+material_override = SubResource("ShaderMaterial_rf2cd")
+
+[node name="Cylinder" parent="Meeb" index="3" unique_id=379720016]
+material_override = SubResource("ShaderMaterial_rf2cd")
+
+[node name="Mball_001" parent="Meeb" index="4" unique_id=450751661]
+material_override = SubResource("ShaderMaterial_rf2cd")
+
+[node name="Retopo_Mball_001" parent="Meeb" index="5" unique_id=1498026135]
+material_override = SubResource("ShaderMaterial_rf2cd")
+
+[node name="Plane" parent="Meeb" index="6" unique_id=2067922629]
+material_override = SubResource("ShaderMaterial_rf2cd")
+
+[node name="Mball_002" parent="Meeb" index="7" unique_id=1481241044]
+material_override = SubResource("ShaderMaterial_rf2cd")
+
+[node name="Cube" parent="Meeb" index="8" unique_id=1850231400]
+material_override = SubResource("ShaderMaterial_rf2cd")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=590351055]
+transform = Transform3D(1, 0, 0, 0, 0.785479, 0.6188883, 0, -0.6188883, 0.785479, 0, 0, 0)
+
+[editable path="Marker3D"]
+[editable path="rocks"]
+[editable path="Meeb"]

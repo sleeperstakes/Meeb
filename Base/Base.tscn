@@ -1,6 +1,49 @@
 [gd_scene format=3 uid="uid://ofnsm6pug8y7"]
 
 [ext_resource type="Script" uid="uid://b7yr6na6ncmlo" path="res://Base/Base.gd" id="1_6elwd"]
+[ext_resource type="PackedScene" uid="uid://cqx68g3hpr8ac" path="res://Meeb/Meeb.tscn" id="2_h44yl"]
 
-[node name="Base" type="Node2D" unique_id=1748971636]
+[node name="Base" type="Node3D" unique_id=1821712563]
 script = ExtResource("1_6elwd")
+
+[node name="Meebs" type="Node3D" parent="." unique_id=990790181]
+
+[node name="Bullet" parent="Meebs" unique_id=981387426 instance=ExtResource("2_h44yl")]
+
+[node name="AnimatedSprite3D" parent="Meebs/Bullet" index="0" unique_id=2089048207]
+animation = &"bullet"
+
+[node name="Cannon" parent="Meebs" unique_id=339310286 instance=ExtResource("2_h44yl")]
+kind = 2
+
+[node name="AnimatedSprite3D" parent="Meebs/Cannon" index="0" unique_id=2089048207]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 0)
+animation = &"cannon"
+
+[node name="Gribble" parent="Meebs" unique_id=518823972 instance=ExtResource("2_h44yl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+
+[node name="AnimatedSprite3D" parent="Meebs/Gribble" index="0" unique_id=2089048207]
+animation = &"gribble"
+
+[node name="Gnaw" parent="Meebs" unique_id=1106737299 instance=ExtResource("2_h44yl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, 0)
+
+[node name="Smooth" parent="Meebs" unique_id=2055320450 instance=ExtResource("2_h44yl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3, 0, 0)
+
+[node name="AnimatedSprite3D" parent="Meebs/Smooth" index="0" unique_id=2089048207]
+animation = &"smooth"
+
+[node name="Fire" parent="Meebs" unique_id=1754074535 instance=ExtResource("2_h44yl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 0, 0)
+
+[node name="AnimatedSprite3D" parent="Meebs/Fire" index="0" unique_id=2089048207]
+animation = &"fire"
+
+[editable path="Meebs/Bullet"]
+[editable path="Meebs/Cannon"]
+[editable path="Meebs/Gribble"]
+[editable path="Meebs/Gnaw"]
+[editable path="Meebs/Smooth"]
+[editable path="Meebs/Fire"]
