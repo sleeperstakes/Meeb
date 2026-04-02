@@ -1,0 +1,300 @@
+[gd_scene format=3 uid="uid://dg4afbg5kabrk"]
+
+[ext_resource type="Script" uid="uid://c7m6ho2ocxjds" path="res://meeb_select.gd" id="1_m32j1"]
+[ext_resource type="Texture2D" uid="uid://i066mj1wucid" path="res://Assets/GIFs/sword.png" id="2_ebwrh"]
+[ext_resource type="Texture2D" uid="uid://dcu4vg71hkvn" path="res://Assets/GIFs/Cannonball.png" id="2_qqju1"]
+[ext_resource type="Texture2D" uid="uid://0eus58g4ocl2" path="res://Assets/GIFs/bow.png" id="3_x6t1y"]
+[ext_resource type="Texture2D" uid="uid://qgoyglrex3od" path="res://Assets/GIFs/bullet.png" id="3_xyrx8"]
+[ext_resource type="Texture2D" uid="uid://b1hxqpbyvv31r" path="res://Assets/GIFs/Gribble.png" id="4_0352o"]
+[ext_resource type="Texture2D" uid="uid://odmd2o4mwyhc" path="res://Assets/GIFs/shoot.png" id="4_m32j1"]
+[ext_resource type="Texture2D" uid="uid://duy7fsnrx4ptw" path="res://Assets/GIFs/Smooth.png" id="5_dsb30"]
+[ext_resource type="PackedScene" uid="uid://iopwhmejcr8b" path="res://addons/RadialMenu/RadialMenu.tscn" id="5_m32j1"]
+[ext_resource type="Texture2D" uid="uid://bm1x5emkb2mac" path="res://Assets/GIFs/Fire.png" id="6_fmesw"]
+[ext_resource type="Script" uid="uid://x3p42omk6grc" path="res://UI/CategoryButton.gd" id="7_22a76"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_txa01"]
+atlas = ExtResource("2_qqju1")
+region = Rect2(0, 0, 107.495, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fmesw"]
+atlas = ExtResource("3_xyrx8")
+region = Rect2(0, 0, 91.275, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1peq"]
+atlas = ExtResource("4_0352o")
+region = Rect2(0, 0, 160.99, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t46ca"]
+atlas = ExtResource("5_dsb30")
+region = Rect2(0, 0, 98.36, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1lwn"]
+atlas = ExtResource("6_fmesw")
+region = Rect2(0, 0, 112.035, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xyrx8"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m32j1"]
+atlas = ExtResource("2_ebwrh")
+region = Rect2(710, 0, 355, 261)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wamfd"]
+atlas = ExtResource("2_ebwrh")
+region = Rect2(0, 0, 355, 261)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6t1y"]
+atlas = ExtResource("2_ebwrh")
+region = Rect2(355, 0, 355, 261)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kfhpl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m32j1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wamfd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6t1y")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0352o"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kfhpl"]
+atlas = ExtResource("3_x6t1y")
+region = Rect2(0, 0, 355, 261)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2sesp"]
+atlas = ExtResource("3_x6t1y")
+region = Rect2(355, 0, 355, 261)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_34a3n"]
+atlas = ExtResource("3_x6t1y")
+region = Rect2(710, 0, 355, 261)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dsb30"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kfhpl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2sesp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_34a3n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qqju1"]
+atlas = ExtResource("4_m32j1")
+region = Rect2(0, 0, 355, 261)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xyrx8"]
+atlas = ExtResource("4_m32j1")
+region = Rect2(355, 0, 355, 261)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0352o"]
+atlas = ExtResource("4_m32j1")
+region = Rect2(710, 0, 355, 261)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_txa01"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qqju1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xyrx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0352o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qqju1"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[node name="MeebSelector" type="Control" unique_id=1640432364]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_m32j1")
+MEEB_TEXTURES = {
+"Ammo": {
+"bullet": SubResource("AtlasTexture_fmesw"),
+"cannon": SubResource("AtlasTexture_txa01")
+},
+"Melee": {
+"gribble": SubResource("AtlasTexture_p1peq"),
+"smooth": SubResource("AtlasTexture_t46ca")
+},
+"Ranged": {
+"fire": SubResource("AtlasTexture_g1lwn")
+}
+}
+
+[node name="MeebSelector" type="VBoxContainer" parent="." unique_id=397144829]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MeebSelector" unique_id=1959461312]
+layout_mode = 2
+alignment = 1
+
+[node name="Melee" type="PanelContainer" parent="MeebSelector/HBoxContainer" unique_id=975413243 node_paths=PackedStringArray("tabC")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xyrx8")
+script = ExtResource("7_22a76")
+tabC = NodePath("../../CenterContainer/Radials")
+
+[node name="MarginContainer" type="MarginContainer" parent="MeebSelector/HBoxContainer/Melee" unique_id=1011412612]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="MeebSelector/HBoxContainer/Melee/MarginContainer" unique_id=1600994542]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="MeebSelector/HBoxContainer/Melee/MarginContainer/SubViewportContainer" unique_id=11324605]
+handle_input_locally = false
+size = Vector2i(95, 65)
+render_target_update_mode = 4
+
+[node name="MeleeSprite" type="AnimatedSprite2D" parent="MeebSelector/HBoxContainer/Melee/MarginContainer/SubViewportContainer/SubViewport" unique_id=1529898700]
+unique_name_in_owner = true
+texture_filter = 1
+scale = Vector2(0.285, 0.285)
+sprite_frames = SubResource("SpriteFrames_kfhpl")
+frame_progress = 0.45143792
+centered = false
+
+[node name="Ranged" type="PanelContainer" parent="MeebSelector/HBoxContainer" unique_id=316651554]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0352o")
+
+[node name="MarginContainer2" type="MarginContainer" parent="MeebSelector/HBoxContainer/Ranged" unique_id=1716542757]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="MeebSelector/HBoxContainer/Ranged/MarginContainer2" unique_id=1864190900]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="MeebSelector/HBoxContainer/Ranged/MarginContainer2/SubViewportContainer" unique_id=129336682]
+handle_input_locally = false
+size = Vector2i(95, 65)
+render_target_update_mode = 4
+
+[node name="RangedSprite" type="AnimatedSprite2D" parent="MeebSelector/HBoxContainer/Ranged/MarginContainer2/SubViewportContainer/SubViewport" unique_id=1300084753]
+unique_name_in_owner = true
+texture_filter = 1
+position = Vector2(0, -9.905)
+scale = Vector2(0.285, 0.285)
+sprite_frames = SubResource("SpriteFrames_dsb30")
+frame_progress = 0.09654157
+centered = false
+
+[node name="Ammo" type="PanelContainer" parent="MeebSelector/HBoxContainer" unique_id=1189699906]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0352o")
+
+[node name="MarginContainer3" type="MarginContainer" parent="MeebSelector/HBoxContainer/Ammo" unique_id=1400530906]
+layout_mode = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="MeebSelector/HBoxContainer/Ammo/MarginContainer3" unique_id=1701493594]
+layout_mode = 2
+
+[node name="SubViewport" type="SubViewport" parent="MeebSelector/HBoxContainer/Ammo/MarginContainer3/SubViewportContainer" unique_id=2113482980]
+handle_input_locally = false
+size = Vector2i(95, 65)
+render_target_update_mode = 4
+
+[node name="AmmoSprite" type="AnimatedSprite2D" parent="MeebSelector/HBoxContainer/Ammo/MarginContainer3/SubViewportContainer/SubViewport" unique_id=764180067]
+unique_name_in_owner = true
+texture_filter = 1
+scale = Vector2(0.285, 0.285)
+sprite_frames = SubResource("SpriteFrames_txa01")
+frame_progress = 0.111192405
+centered = false
+
+[node name="CenterContainer" type="CenterContainer" parent="MeebSelector" unique_id=1390719793]
+layout_mode = 2
+
+[node name="Radials" type="TabContainer" parent="MeebSelector/CenterContainer" unique_id=1863704316]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qqju1")
+current_tab = 2
+tabs_visible = false
+switch_on_drag_hover = false
+
+[node name="Melee" parent="MeebSelector/CenterContainer/Radials" unique_id=1018573578 instance=ExtResource("5_m32j1")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(284.57657, 278.047)
+layout_mode = 2
+center_radius = 70
+selector_position = 2
+circle_coverage = 0.59
+center_angle = -2.311
+show_animation = false
+animation_speed_factor = 0.155
+icon_scale = 0.8
+metadata/_tab_index = 0
+
+[node name="Ranged" parent="MeebSelector/CenterContainer/Radials" unique_id=442562967 instance=ExtResource("5_m32j1")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(284.57657, 278.047)
+layout_mode = 2
+center_radius = 70
+selector_position = 2
+circle_coverage = 0.59
+center_angle = -2.311
+show_animation = false
+animation_speed_factor = 0.155
+icon_scale = 0.8
+metadata/_tab_index = 1
+
+[node name="Ammo" parent="MeebSelector/CenterContainer/Radials" unique_id=950292963 instance=ExtResource("5_m32j1")]
+unique_name_in_owner = true
+visible = true
+custom_minimum_size = Vector2(284.57657, 278.047)
+layout_mode = 2
+center_radius = 70
+selector_position = 2
+circle_coverage = 0.59
+center_angle = -2.311
+show_animation = false
+animation_speed_factor = 0.155
+icon_scale = 0.8
+metadata/_tab_index = 2
+
+[editable path="MeebSelector/CenterContainer/Radials/Melee"]
+[editable path="MeebSelector/CenterContainer/Radials/Ranged"]
+[editable path="MeebSelector/CenterContainer/Radials/Ammo"]

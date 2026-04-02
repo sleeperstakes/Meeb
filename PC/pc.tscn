@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://dbqgq1j0q8rdh"]
+
+[ext_resource type="Script" uid="uid://cadrknr71du06" path="res://PC/pc.gd" id="1_cv6ni"]
+[ext_resource type="Texture2D" uid="uid://chfcccdu2tlwt" path="res://Assets/GIFs/cursor_ammo.png" id="2_rki5i"]
+[ext_resource type="Texture2D" uid="uid://bnmwmleg6tquo" path="res://Assets/GIFs/cursor_throw.png" id="3_5vmlt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lxqcr"]
+atlas = ExtResource("2_rki5i")
+region = Rect2(0, 0, 173, 165)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_prw34"]
+atlas = ExtResource("2_rki5i")
+region = Rect2(173, 0, 173, 165)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvu7a"]
+atlas = ExtResource("2_rki5i")
+region = Rect2(346, 0, 173, 165)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fe6os"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lxqcr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_prw34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvu7a")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_alf3q"]
+atlas = ExtResource("3_5vmlt")
+region = Rect2(0, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tud4t"]
+atlas = ExtResource("3_5vmlt")
+region = Rect2(200, 0, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j2lej"]
+atlas = ExtResource("3_5vmlt")
+region = Rect2(400, 0, 200, 200)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oabit"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_alf3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tud4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j2lej")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="PC" type="Marker3D" unique_id=1492767841]
+transform = Transform3D(1, 0, 0, 0, 0.9659258, 0.25881904, 0, -0.25881904, 0.9659258, 0, 0, 0)
+script = ExtResource("1_cv6ni")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1960940373]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.9612904)
+
+[node name="Cursors" type="Node2D" parent="." unique_id=898744752]
+
+[node name="CursorAmmo" type="AnimatedSprite2D" parent="Cursors" unique_id=1415100018]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_fe6os")
+animation = &"new_animation"
+frame_progress = 0.14363895
+
+[node name="CursorThrow" type="AnimatedSprite2D" parent="Cursors" unique_id=1680254247]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_oabit")
+animation = &"new_animation"

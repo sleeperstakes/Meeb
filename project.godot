@@ -14,10 +14,19 @@ config/name="Meebs"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout="uid://b5ho0m4th6fix"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/RadialMenu/plugin.cfg")
+
 [physics]
 
 3d/physics_engine="Jolt Physics"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 rendering_device/driver.windows="d3d12"

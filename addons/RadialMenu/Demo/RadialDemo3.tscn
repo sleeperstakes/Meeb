@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://cuqniiohe2b05"]
+
+[ext_resource type="Script" uid="uid://b3eha7c0o5xwv" path="res://addons/RadialMenu/Demo/RadialDemo3.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://iopwhmejcr8b" path="res://addons/RadialMenu/RadialMenu.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://cd82xvdlngnvn" path="res://addons/RadialMenu/Demo/Rock_02_CGBookcase.jpg" id="5"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(0.113725, 0.113725, 0.113725, 1)
+
+[node name="RadialMenuDemo3" type="PanelContainer" unique_id=1089473750]
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("1")
+script = ExtResource("2")
+
+[node name="Background" type="HBoxContainer" parent="." unique_id=589215099]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="LeftThrid" type="ColorRect" parent="Background" unique_id=2100370858]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MiddleThird" type="ColorRect" parent="Background" unique_id=1662752067]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.164706, 0.164706, 0.164706, 1)
+
+[node name="RightThird" type="ColorRect" parent="Background" unique_id=76419144]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="TextureRect" type="TextureRect" parent="Background/RightThird" unique_id=1597647045]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("5")
+expand_mode = 1
+stretch_mode = 2
+
+[node name="Instructions" type="Label" parent="." unique_id=1403497939]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 7
+size_flags_vertical = 6
+text = "Click anywhere with the right mouse button 
+to open the radial menu."
+
+[node name="MenuResult" type="Label" parent="." unique_id=197632407]
+visible = false
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 10
+text = "Nothing selected yet."
+max_lines_visible = 1
+
+[node name="Node" type="Node" parent="." unique_id=1790436177]
+
+[node name="RadialMenu" parent="Node" unique_id=1568882291 instance=ExtResource("3")]
+custom_minimum_size = Vector2(270, 176.74344)
+offset_right = 270.0
+offset_bottom = 176.74344
+pivot_offset = Vector2(135, 135)
+radius = 135
+center_radius = 21
+circle_coverage = 0.6
+center_angle = -1.571
+animation_speed_factor = 0.12
+icon_scale = 0.6
+
+[connection signal="item_selected" from="Node/RadialMenu" to="." method="_on_ArcPopupMenu_item_selected"]
