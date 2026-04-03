@@ -12,8 +12,8 @@ extends Control
 
 @export var selected_category = 0:
   set(selected_):
-    selected_category = posmod(selected_, 3)
     if is_node_ready() and get_parent().is_node_ready():
+      selected_category = posmod(selected_, 3)
       var sel :CategoryButton =%MeebTypes.get_child(selected_category)
       sel.selected_category = true
       %CursorAmmo.hide()
@@ -22,6 +22,8 @@ extends Control
         %CursorAmmo.show()
       else:
         %CursorThrow.show()
+        
+        
         
 @export var MEEB_TEXTURES = {
   "Ammo":{
