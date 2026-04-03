@@ -91,7 +91,6 @@ current = true
 
 [node name="PostProcess" type="MeshInstance3D" parent="CamHandler" unique_id=1653356559]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
-visible = false
 material_override = SubResource("ShaderMaterial_lxqcr")
 mesh = SubResource("QuadMesh_prw34")
 
@@ -119,6 +118,7 @@ offset_left = 799.0
 offset_top = 257.0
 offset_right = 799.0
 offset_bottom = 257.0
+selected_category = null
 
 [node name="MouseIndic" parent="." unique_id=1481884762 instance=ExtResource("6_lxqcr")]
 visible = false

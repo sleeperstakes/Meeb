@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://iopwhmejcr8b" path="res://addons/RadialMenu/RadialMenu.tscn" id="5_m32j1"]
 [ext_resource type="Texture2D" uid="uid://bm1x5emkb2mac" path="res://Assets/GIFs/Fire.png" id="6_fmesw"]
 [ext_resource type="Script" uid="uid://x3p42omk6grc" path="res://UI/CategoryButton.gd" id="7_22a76"]
+[ext_resource type="Shader" uid="uid://bq778bej4aob4" path="res://UI/MeebSelect.gdshader" id="12_fgdu2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fmesw"]
 atlas = ExtResource("3_xyrx8")
@@ -31,6 +32,9 @@ region = Rect2(0, 0, 98.36, 0)
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1lwn"]
 atlas = ExtResource("6_fmesw")
 region = Rect2(0, 0, 112.035, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fgdu2"]
+shader = ExtResource("12_fgdu2")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m32j1"]
 atlas = ExtResource("2_ebwrh")
@@ -125,6 +129,15 @@ animations = [{
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qqju1"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kw4l2"]
+shader = ExtResource("12_fgdu2")
+
+[sub_resource type="Gradient" id="Gradient_kql68"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_a63ac"]
+gradient = SubResource("Gradient_kql68")
+
 [node name="MeebSelector" type="Control" unique_id=1640432364]
 layout_mode = 3
 anchors_preset = 15
@@ -133,6 +146,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_m32j1")
+selected_meeb = null
+selected_category = null
 MEEB_TEXTURES = {
 "Ammo": {
 "bullet": SubResource("AtlasTexture_fmesw"),
@@ -159,6 +174,7 @@ layout_mode = 2
 alignment = 1
 
 [node name="Melee" type="PanelContainer" parent="MeebSelector/MeebTypes" unique_id=975413243 node_paths=PackedStringArray("tabC")]
+material = SubResource("ShaderMaterial_fgdu2")
 layout_mode = 2
 script = ExtResource("7_22a76")
 tabC = NodePath("../../CenterContainer/Radials")
@@ -184,10 +200,11 @@ unique_name_in_owner = true
 texture_filter = 1
 scale = Vector2(0.285, 0.285)
 sprite_frames = SubResource("SpriteFrames_kfhpl")
-frame_progress = 0.5964066
+frame_progress = 0.28334266
 centered = false
 
 [node name="Ranged" type="PanelContainer" parent="MeebSelector/MeebTypes" unique_id=316651554 node_paths=PackedStringArray("tabC")]
+material = SubResource("ShaderMaterial_fgdu2")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0352o")
 script = ExtResource("7_22a76")
@@ -214,10 +231,11 @@ texture_filter = 1
 position = Vector2(0, -9.905)
 scale = Vector2(0.285, 0.285)
 sprite_frames = SubResource("SpriteFrames_dsb30")
-frame_progress = 0.24150126
+frame_progress = 0.92843115
 centered = false
 
 [node name="Ammo" type="PanelContainer" parent="MeebSelector/MeebTypes" unique_id=1189699906 node_paths=PackedStringArray("tabC")]
+material = SubResource("ShaderMaterial_fgdu2")
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_0352o")
 script = ExtResource("7_22a76")
@@ -243,7 +261,7 @@ unique_name_in_owner = true
 texture_filter = 1
 scale = Vector2(0.285, 0.285)
 sprite_frames = SubResource("SpriteFrames_txa01")
-frame_progress = 0.25615403
+frame_progress = 0.94308585
 centered = false
 
 [node name="CenterContainer" type="CenterContainer" parent="MeebSelector" unique_id=1390719793]
@@ -253,16 +271,19 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qqju1")
-current_tab = 2
+current_tab = 0
 tabs_visible = false
 switch_on_drag_hover = false
 
 [node name="Melee" parent="MeebSelector/CenterContainer/Radials" unique_id=1018573578 instance=ExtResource("5_m32j1")]
 unique_name_in_owner = true
+visible = true
+material = SubResource("ShaderMaterial_fgdu2")
 custom_minimum_size = Vector2(286.59113, 280.43787)
 layout_mode = 2
 center_radius = 70
 selector_position = 2
+decorator_ring_position = 2
 circle_coverage = 0.6
 center_angle = -2.311
 animation_speed_factor = 0.015
@@ -271,10 +292,12 @@ metadata/_tab_index = 0
 
 [node name="Ranged" parent="MeebSelector/CenterContainer/Radials" unique_id=442562967 instance=ExtResource("5_m32j1")]
 unique_name_in_owner = true
+material = SubResource("ShaderMaterial_fgdu2")
 custom_minimum_size = Vector2(286.59113, 280.43787)
 layout_mode = 2
 center_radius = 70
 selector_position = 2
+decorator_ring_position = 2
 circle_coverage = 0.6
 center_angle = -2.311
 animation_speed_factor = 0.015
@@ -283,16 +306,25 @@ metadata/_tab_index = 1
 
 [node name="Ammo" parent="MeebSelector/CenterContainer/Radials" unique_id=950292963 instance=ExtResource("5_m32j1")]
 unique_name_in_owner = true
-visible = true
+material = SubResource("ShaderMaterial_fgdu2")
 custom_minimum_size = Vector2(286.59113, 280.43787)
 layout_mode = 2
 center_radius = 70
 selector_position = 2
+decorator_ring_position = 2
 circle_coverage = 0.6
 center_angle = -2.311
 animation_speed_factor = 0.015
 icon_scale = 0.8
 metadata/_tab_index = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=2063765345]
+visible = false
+material = SubResource("ShaderMaterial_kw4l2")
+layout_mode = 0
+offset_right = 324.0
+offset_bottom = 332.0
+texture = SubResource("GradientTexture1D_a63ac")
 
 [editable path="MeebSelector/CenterContainer/Radials/Melee"]
 [editable path="MeebSelector/CenterContainer/Radials/Ranged"]

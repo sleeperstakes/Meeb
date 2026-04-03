@@ -2,13 +2,20 @@
 extends Control
 
 
-
-@export var selected = 0:
+@export var selected_meeb = 0:
   set(selected_):
-    selected = posmod(selected_, 3)
+     if is_node_ready() and get_parent().is_node_ready():
+      var selrad :RadMenu =%Radials.get_child(selected_category)
+      selected_meeb = posmod(selected_, selrad.get_child_count())
+      selrad.selected = selected_
+      
+
+@export var selected_category = 0:
+  set(selected_):
+    selected_category = posmod(selected_, 3)
     if is_node_ready() and get_parent().is_node_ready():
-      var sel :CategoryButton =%MeebTypes.get_child(selected)
-      sel.selected = true
+      var sel :CategoryButton =%MeebTypes.get_child(selected_category)
+      sel.selected_category = true
       %CursorAmmo.hide()
       %CursorThrow.hide()
       if sel.name == "Ammo":
@@ -45,8 +52,8 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
   if event.is_action_pressed("left_category"):
     print("a")
-    selected-=1
+    selected_category-=1
   elif event.is_action_pressed("right_category"):
     print("b")
-    selected+=1
+    selected_category+=1
     
