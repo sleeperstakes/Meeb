@@ -184,7 +184,7 @@ unique_name_in_owner = true
 texture_filter = 1
 scale = Vector2(0.285, 0.285)
 sprite_frames = SubResource("SpriteFrames_kfhpl")
-frame_progress = 0.81558144
+frame_progress = 0.5964066
 centered = false
 
 [node name="Ranged" type="PanelContainer" parent="MeebSelector/MeebTypes" unique_id=316651554 node_paths=PackedStringArray("tabC")]
@@ -214,7 +214,7 @@ texture_filter = 1
 position = Vector2(0, -9.905)
 scale = Vector2(0.285, 0.285)
 sprite_frames = SubResource("SpriteFrames_dsb30")
-frame_progress = 0.4606763
+frame_progress = 0.24150126
 centered = false
 
 [node name="Ammo" type="PanelContainer" parent="MeebSelector/MeebTypes" unique_id=1189699906 node_paths=PackedStringArray("tabC")]
@@ -243,7 +243,7 @@ unique_name_in_owner = true
 texture_filter = 1
 scale = Vector2(0.285, 0.285)
 sprite_frames = SubResource("SpriteFrames_txa01")
-frame_progress = 0.47532898
+frame_progress = 0.25615403
 centered = false
 
 [node name="CenterContainer" type="CenterContainer" parent="MeebSelector" unique_id=1390719793]
@@ -253,15 +253,14 @@ layout_mode = 2
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qqju1")
-current_tab = 1
+current_tab = 2
 tabs_visible = false
 switch_on_drag_hover = false
 
 [node name="Melee" parent="MeebSelector/CenterContainer/Radials" unique_id=1018573578 instance=ExtResource("5_m32j1")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(284.57657, 278.047)
+custom_minimum_size = Vector2(286.59113, 280.43787)
 layout_mode = 2
-active = null
 center_radius = 70
 selector_position = 2
 circle_coverage = 0.6
@@ -272,10 +271,8 @@ metadata/_tab_index = 0
 
 [node name="Ranged" parent="MeebSelector/CenterContainer/Radials" unique_id=442562967 instance=ExtResource("5_m32j1")]
 unique_name_in_owner = true
-visible = true
 custom_minimum_size = Vector2(286.59113, 280.43787)
 layout_mode = 2
-active = null
 center_radius = 70
 selector_position = 2
 circle_coverage = 0.6
@@ -286,9 +283,9 @@ metadata/_tab_index = 1
 
 [node name="Ammo" parent="MeebSelector/CenterContainer/Radials" unique_id=950292963 instance=ExtResource("5_m32j1")]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(284.57657, 278.047)
+visible = true
+custom_minimum_size = Vector2(286.59113, 280.43787)
 layout_mode = 2
-active = null
 center_radius = 70
 selector_position = 2
 circle_coverage = 0.6

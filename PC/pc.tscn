@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://chfcccdu2tlwt" path="res://Assets/GIFs/cursor_ammo.png" id="2_rki5i"]
 [ext_resource type="Texture2D" uid="uid://bnmwmleg6tquo" path="res://Assets/GIFs/cursor_throw.png" id="3_5vmlt"]
 [ext_resource type="PackedScene" uid="uid://dg4afbg5kabrk" path="res://UI/MeebSelect.tscn" id="4_rki5i"]
+[ext_resource type="PackedScene" uid="uid://ci5airimlvjto" path="res://UI/3D/mouseindic.tscn" id="6_lxqcr"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_lxqcr"]
 render_priority = 0
@@ -81,14 +82,16 @@ script = ExtResource("1_cv6ni")
 
 [node name="CamHandler" type="Marker3D" parent="." unique_id=1798505897]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 0.96592575, 0.258819, 0, -0.258819, 0.96592575, 0, 0.99999994, 0)
+transform = Transform3D(1, 0, 0, 0, 0.96592575, 0.258819, 0, -0.258819, 0.96592575, 0, 2.235, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CamHandler" unique_id=1960940373]
+unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, 0, 2.9612904)
 current = true
 
 [node name="PostProcess" type="MeshInstance3D" parent="CamHandler" unique_id=1653356559]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 2)
+visible = false
 material_override = SubResource("ShaderMaterial_lxqcr")
 mesh = SubResource("QuadMesh_prw34")
 
@@ -111,7 +114,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CylinderShape3D_cv6ni")
 
 [node name="MeebSelector" parent="." unique_id=1640432364 instance=ExtResource("4_rki5i")]
+unique_name_in_owner = true
 offset_left = 799.0
 offset_top = 257.0
 offset_right = 799.0
 offset_bottom = 257.0
+
+[node name="MouseIndic" parent="." unique_id=1481884762 instance=ExtResource("6_lxqcr")]
+visible = false

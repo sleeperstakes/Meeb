@@ -21,7 +21,7 @@ data = PackedVector3Array(-50, 0.25, 50, 50, 0.25, 50, -50, -0.25, 50, 50, 0.25,
 [node name="Node3D" type="Node3D" unique_id=195447285]
 
 [node name="Marker3D" parent="." unique_id=1492767841 instance=ExtResource("1_uxrcv")]
-transform = Transform3D(1, 0, 0, 0, 0.96592575, 0.258819, 0, -0.258819, 0.96592575, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9999999, 0, 0, 0, 0.9999999, 0, 0, 0)
 
 [node name="rocks" parent="." unique_id=1070657038 instance=ExtResource("2_rf2cd")]
 transform = Transform3D(3.135, 0, 0, 0, 3.135, 0, 0, 0, 3.135, 0.23725176, 0.5340991, -25.08)
@@ -63,32 +63,32 @@ shape = SubResource("ConcavePolygonShape3D_yrcb4")
 
 [node name="Sprite3D" type="Sprite3D" parent="." unique_id=299700077]
 
-[node name="Meeb" parent="." unique_id=750449904 instance=ExtResource("4_5crlr")]
+[node name="Meeb" parent="." unique_id=893588694 instance=ExtResource("4_5crlr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.256525, 0, 13.585329)
 
-[node name="Box" parent="Meeb" index="2" unique_id=1758642990]
+[node name="Box" parent="Meeb" index="2" unique_id=2049656960]
 material_override = SubResource("ShaderMaterial_rf2cd")
 
-[node name="Cylinder" parent="Meeb" index="3" unique_id=379720016]
+[node name="Cylinder" parent="Meeb" index="3" unique_id=635389891]
 material_override = SubResource("ShaderMaterial_rf2cd")
 
-[node name="Mball_001" parent="Meeb" index="4" unique_id=450751661]
+[node name="Mball_001" parent="Meeb" index="4" unique_id=2034179298]
 material_override = SubResource("ShaderMaterial_rf2cd")
 
-[node name="Retopo_Mball_001" parent="Meeb" index="5" unique_id=1498026135]
+[node name="Retopo_Mball_001" parent="Meeb" index="5" unique_id=327651848]
 material_override = SubResource("ShaderMaterial_rf2cd")
 
-[node name="Plane" parent="Meeb" index="6" unique_id=2067922629]
+[node name="Plane" parent="Meeb" index="6" unique_id=1575091487]
 material_override = SubResource("ShaderMaterial_rf2cd")
 
-[node name="Mball_002" parent="Meeb" index="7" unique_id=1481241044]
+[node name="Mball_002" parent="Meeb" index="7" unique_id=1979298772]
 material_override = SubResource("ShaderMaterial_rf2cd")
 
-[node name="Cube" parent="Meeb" index="8" unique_id=1850231400]
+[node name="Cube" parent="Meeb" index="8" unique_id=1681291939]
 material_override = SubResource("ShaderMaterial_rf2cd")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=590351055]
-transform = Transform3D(1, 0, 0, 0, 0.785479, 0.6188883, 0, -0.6188883, 0.785479, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 0.23004976, 0.97317886, 0, -0.97317886, 0.23004976, 0, 0, 0)
 
 [editable path="Marker3D"]
 [editable path="rocks"]
